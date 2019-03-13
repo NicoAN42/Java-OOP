@@ -25,16 +25,16 @@ public abstract class Meal {
             "Paratha", "Thosai", "Briyani", "Chapati", "Curry Noodles", "Green Curry Noodles", "Fried Noodles", "Char Kuey Teow", "Fried Mee Hoon", "Nasi Lemak Fried Chicken",
             "Nasi Lemak Rendang", "Nasi Lemak Curry Chicken", "Spicy Fried Rice", "Ginger Fried Rice", "Steamed Chicken Rice", "Minced Chicken Rice", "Tom Yam Rice", "Curry Puff", "Pizza Slice", "Garlic Bread",
             "Mini Burger", "Waffle Toast", "Chicken Chop Rice", "Grilled Chicken", "Meatball Spaghetti"};
-    //Default meal names at program start
+    
     private static final Double[] mealPriceArray = {4.90, 5.50, 3.60, 4.25, 4.50, 3.45, 4.55, 4.75, 3.90, 4.45,
             8.90, 6.45, 14.95, 7.90, 9.90, 9.90, 9.50, 10.50, 9.50, 15.90,
             14.90, 14.90, 11.90, 10.90, 12.80, 11.50, 10.90, 6.90, 7.90, 5.50,
             9.90, 6.50, 14.50, 14.90, 13.90};
-    //Default meal prices at program start
+   
     private static ArrayList<String> mealCodes = new ArrayList<>(Arrays.asList(mealCodeArray));
     private static ArrayList<String> mealNames = new ArrayList<>(Arrays.asList(mealNameArray));
     private static ArrayList<Double> mealPrices = new ArrayList<>(Arrays.asList(mealPriceArray));
-    //Conversion from array to array list to allow dynamic changes for code, name and price by manager
+    
 
     public Meal(){
         this("", "", 0.0, false);
@@ -135,17 +135,17 @@ public abstract class Meal {
             return "Take Away";
         else
             return "Dine-in";
-    } //return string representation of meal order type
+    } 
 
     public String remarks(){
         if (remarks.equals(""))
             return "";
         else
             return "\nRemarks: " + remarks;
-    } //return remarks if there is one
+    } 
 
     @Override
-    public abstract String toString(); //Abstract method that must be implemented in subclasses
+    public abstract String toString(); 
 
     public static void displayMeal(String mealCode){
         int mealIndex = mealCodes.indexOf(mealCode);
@@ -154,5 +154,5 @@ public abstract class Meal {
         System.out.printf("Meal Price: RM%.2f\n", mealPrices.get(mealIndex));
     }
 
-    public abstract double mealPrice(); //Abstract method that must be implemented in subclasses
+    public abstract double mealPrice(); 
 }

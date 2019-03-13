@@ -37,13 +37,11 @@ public class OrderedFood extends Meal{
     }
 
     public String toString(){
-        //Returning food order information
         String mealDetails = "-" + mealOrderType() + "---" + setDrink();
         return String.format("%-10s%-25s%-65s", getMealCode(), getMealName(), mealDetails) + getMealStatus() + remarks() + "\n";
     }
 
     public double mealPrice(){
-        //Abstract method in superclass implemented to return meal price including set drink
         if(setDrink == null)
             return getMealPrice();
         else

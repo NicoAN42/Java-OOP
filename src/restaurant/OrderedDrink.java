@@ -42,23 +42,21 @@ public class OrderedDrink extends Meal{
             return "Hot";
         else
             return "Cold";
-    } //return string representation of drink hotness
-
+    } 
+    
     public String drinkSize(){
         if (drinkSize == 'R')
             return "Regular";
         else
             return "Large";
-    } //return string representation of drink size
+    }
 
     public String toString(){
-        //Returning drink order information
         String mealDetails = "-" + mealOrderType() + "---" + drinkHotness() + "---" + drinkSize();
         return String.format("%-10s%-25s%-65s", getMealCode(), getMealName(), mealDetails) + getMealStatus() + remarks() + "\n";
     }
 
     public double mealPrice(){
-        //Abstract method in superclass implemented to return meal price
         return getMealPrice();
     }
 }

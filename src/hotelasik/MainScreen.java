@@ -11,7 +11,7 @@ public class MainScreen implements Serializable{
 
 	public static void main(String args[])
 	{
-		int nod,type,bookingno,ld,d;
+            int nod,type,bookingno,ld,d;
 	    char ch='y';
 	    double ff;
 	    String name;

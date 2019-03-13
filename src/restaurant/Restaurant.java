@@ -13,428 +13,20 @@ import java.util.*;
  * @author Acer
  */
 public class Restaurant {
-//    public static Scanner input;
-//    /**
-//     * @param args the command line arguments
-//     */
-//    public static void main(String[] args) {
-//        input = new Scanner(System.in);
-//         System.out.println("-----------Selamat Datang di Ashyaap Management-----------\n");
-//         System.out.print("Masukkan Nama Restaurant/Cafe Anda: ");
-//         String namaToko = input.nextLine();
-//         
-//         Manager.setNamaToko(namaToko);
-//         Manager manager = new Manager();
-//         manager.createNewManager();
-//         
-//         Table.aturTable();
-//         
-//         String username = "", idManager = "";
-//         while(true){
-//             boolean isValid = false;
-//             while(!isValid){
-//                 System.out.println("\n" + Manager.getNamaToko() + "Login");
-//                 for(int i = 0; i < Manager.getNamaToko().length()+6; i++ ){
-//                     System.out.println("-");
-//                 }
-//                     System.out.print("\n Masukkan username('0' untuk Exit): ");
-//                     username = input.nextLine();
-//                     if(username.equals("0")){
-//                         break;
-//                     }
-//                     System.out.print("Masukkan idManager: ");
-//                     idManager = input.nextLine();
-//                     
-//                     manager = new Manager(username, idManager);
-//                     isValid = manager.isValidManager();
-//                     
-//                     if(!isValid){
-//                         System.out.println("Username atau Password Salah! Periksa Kembali.\n");
-//                     }
-//                 } if(username.equals("0")){
-//                     exitRestaurant();
-//                     continue;
-//             }
-//                 menu();
-//         }
-//         
-//         
-//// TODO code application logic here
-//    }
-//
-//    public static void menu() {
-//        char kategori = ' ';
-//        while(kategori!=4){
-//            printKategoriBagian();
-//            
-//            while(!(kategori>='1' && kategori<='4')){
-//                System.out.print("Pilih Kategori: ");
-//                String systemKategori = input.nextLine();
-//                if(systemKategori.length() >= 1 && !(kategori >= '1' && kategori <= '4')){
-//                    kategori = systemKategori.charAt(0);
-//                }
-//                if(!(kategori >= '1' && kategori <= '4')){
-//                    System.out.println("Pilih Kategori yang Sesuai!");
-//                }
-//            }
-//            
-//            pilihKategori(kategori);
-//            if(kategori != '4'){
-//                kategori = ' ';
-//            }
-//            
-//        }
-//        System.out.println(Manager.getNamaToko() + "Berhasil Log Out.");
-////        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    public static void exitRestaurant() {
-//        
-//         char option = ' ';
-//        System.out.println("Are you sure, you want to exit? All saved data will be lost!");
-//        while (!(option == 'N')){
-//            System.out.print("Enter 'Y' for \"Yes\" and 'N' for \"No\": ");
-//            String optionS = input.nextLine();
-//            if (optionS.length() >= 1)
-//                option = Character.toUpperCase(optionS.charAt(0));
-//            if (option == 'Y'){
-//                System.out.println(Manager.getNamaToko() + "'s Ashyaap Successfully Terminated.");
-//                System.exit(0);
-//            } //Exit TOMS system with confirmation from user, where data will be lost after exiting
-//            if (!(option == 'N'))
-//                System.out.println("Invalid input detected! Try again.");
-//        }
-//    }
-////        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    
-//
-//    public static void printKategoriBagian() {
-//        System.out.println();
-//        System.out.println("1.Pelayan");
-//        System.out.println("2.Koki");
-//        System.out.println("3.Manager");
-//        System.out.println("4.Log Out");
-//        System.out.println("---------------------");
-//        
-////        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    public static void pilihKategori(char kategori) {
-//
-//        if (kategori=='1'){
-//            int tableNum = -1;
-//
-//            while (tableNum != 0){
-//                System.out.println();
-//                Table.displayTable(Table.getTables()); //Displaying current tables' statuses
-//                ArrayList<Integer> options = new ArrayList<>();
-//                while(!(tableNum >= 0 && tableNum <= Table.getTotalTables())){
-//                    System.out.print("Enter table number(0 to exit): ");
-//                    String tableNumS = input.nextLine();
-//                    try {
-//                        tableNum = Integer.valueOf(tableNumS);
-//                    }
-//                    catch(NumberFormatException ex){
-//                        System.out.println("Invalid input detected!");
-//                    }
-//                    if (!(tableNum >= 0 && tableNum <= Table.getTotalTables()))
-//                        System.out.println("Invalid input for table number!");
-//                } //Validate table number input
-//
-//                if (tableNum == 0) //If tableNum is 0, exit to system kategori menu
-//                    break;
-//
-//                String status = Table.getTables().get(tableNum-1).getStatus(); //Getting table status
-//
-//                if (status == "NO"){
-//                    int noOrder = 0;
-//                    System.out.println("\nCreate New Order\n----------------");
-//
-//                    while(!(noOrder >= 1)){
-//                        System.out.print("Enter number of customer(s): ");
-//                        String noCustomer = input.nextLine();
-//                        try {
-//                            noOrder = Integer.valueOf(noCustomer);
-//                        }
-//                        catch(NumberFormatException ex){
-//                            System.out.println("Invalid input detected!");
-//                        }
-//                        if (noOrder < 1)
-//                            System.out.println("Invalid input for number of customers!");
-//                    } 
-//
-//                    Order order = new Order(noOrder); 
-//                    order.addMeal(tableNum); 
-//                }
-//                else if (status == "OT"){
-//                   
-//                    options.clear();
-//                    for (int i=0; i<5; i++)
-//                        options.add(i);
-//                    System.out.println();
-//                    int option = menuEntry(options); 
-//                    pilihKategori(option, tableNum); 
-//                }
-//                else if (status == "FR"){
-//                    //If table status is "FR", then three options are given
-//                    options.clear();
-//                    options.add(0);
-//                    options.add(2);
-//                    options.add(4);
-//                    options.add(5);
-//                    System.out.println();
-//                    int option = menuEntry(options); 
-//                    pilihKategori(option, tableNum); 
-//                }
-//                else if (status == "FS"){
-//                    //If table status is "FS", then four options are given
-//                    options.clear();
-//                    options.add(0);
-//                    options.add(2);
-//                    options.add(4);
-//                    options.add(6);
-//                    System.out.println();
-//                    int option = menuEntry(options); 
-//                    pilihKategori(option, tableNum); 
-//                }
-//
-//                tableNum = -1; 
-//            } 
-//        }
-//
-//        else if(kategori=='2'){
-//            int tableNum = -1;
-//            boolean isExist;
-//            Table chosenTable = null;
-//            //Creating array list of tables for containing tables with order
-//            ArrayList<Table> tables = new ArrayList<>();
-//
-//            while(tableNum != 0){
-//                tableNum = -1;
-//                Order.displayTableOrders(tables); //Display all table orders
-//
-//                if (tables.isEmpty()){
-//                    System.out.println("No orders at the moment.");
-//                    break;
-//                }
-//                isExist = false;
-//                while(!(tableNum >= 0 && isExist)){
-//                    System.out.print("\nEnter table number(0 to exit): ");
-//                    String tableNumS = input.nextLine();
-//                    try {
-//                        tableNum = Integer.valueOf(tableNumS);
-//                    }
-//                    catch(NumberFormatException ex){
-//                        System.out.println("Invalid input detected!");
-//                    }
-//                    if (tableNum == 0)
-//                        break;
-//                    for (Table table: tables){
-//                        if (table.getTableNum() == tableNum){
-//                            isExist = true;
-//                            chosenTable = table; //Assigning chosenTable with the table that matches tableNum
-//                            break;
-//                        }
-//                    }
-//                    if (!(tableNum >= 0 && isExist))
-//                        System.out.println("Table number entered does not exist in order list!");
-//                } //Validate table number input
-//
-//                if (tableNum == 0)
-//                    continue; //Return to system kategori menu
-//
-//                //Getting total number of meals present in the table order
-//                int numOfOrders = chosenTable.getOrder().getMeals().size();
-//                int orderNo = 0;
-//                while(!(orderNo >= 1 && orderNo <= numOfOrders)){
-//                    System.out.print("Enter which meal have been cooked: ");
-//                    String orderNoS = input.nextLine();
-//                    try{
-//                        orderNo = Integer.valueOf(orderNoS);
-//                    }
-//                    catch(NumberFormatException ex){
-//                        System.out.println("Invalid input detected!");
-//                    }
-//                    if (!(orderNo >= 1 && orderNo <= numOfOrders))
-//                        System.out.println("Order number entered is invalid! Try again.");
-//                } //Receiving order number of the orders in list of the chosen table number
-//
-//                //Creating Meal object to hold the chosen meal
-//                Meal chosenMeal = chosenTable.getOrder().getMeals().get(orderNo-1);
-//                //Getting whether the meal chosen in order list is already cooked
-//                boolean isMealCooking = chosenMeal.getMealStatus().equals("Cooking");
-//                //Set the chosen meal as ready
-//                if (isMealCooking)
-//                    chosenMeal.setMealStatus("Ready");
-//                else
-//                    System.out.println("The meal chosen is already cooked!");
-//                Order.setOrderReady(chosenTable); //If all meal is ready, set the order as ready
-//            }
-//        }
-//
-//        else if (kategori=='3'){
-//            Manager manager = null;
-//            String username = "", idManager = "";
-//
-//            while (!username.equals("0")){
-//                boolean isValid = false;
-//                while (!isValid){
-//                    System.out.println("\n" + Manager.getNamaToko() + " Manager Login");
-//                    for(int i=0; i<Manager.getNamaToko().length()+14; i++)
-//                        System.out.print("-");
-//                    System.out.print("\nEnter username('0' to exit): ");
-//                    username = input.nextLine();
-//                    if (username.equals("0"))
-//                        break;
-//                    System.out.print("Enter idManager: ");
-//                    idManager = input.nextLine();
-//
-//                    manager = new Manager(username, idManager);
-//                    isValid = manager.isValidManager();
-//
-//                    if (!isValid)
-//                        System.out.println("Username or Password is incorrect! Try again.\n");
-//                } //Validate and verify manager
-//
-//                if (username.equals("0"))
-//                    continue; //Exit manager system kategori immediately and return to choose system kategori
-//
-//                char option = ' ';
-//                while (option != '0'){
-//                    displayManagerMenu(); //Display manager functions menu
-//                    option = ' ';
-//                    while (!(option >= '0' && option <= '8')){
-//                        System.out.print("Enter menu option(0 to exit): ");
-//                        String optionS = input.nextLine();
-//                        if (optionS.length() >= 1)
-//                            option = optionS.charAt(0);
-//                        if (!(option >= '0' && option <= '8'))
-//                            System.out.println("Invalid option! Try again.");
-//                    } //Validate manager option
-//
-//                    if (option == '0')
-//                        continue; //If option is 0, then return to manager login
-//                    else if (option == '1')
-//                        manager.editMenu();
-//                    else if (option == '2')
-//                        manager.addMenu();
-//                    else if (option == '3')
-//                        manager.deleteMenu();
-//                    else if (option == '4'){
-//                        manager.setPromotion();
-//                    }
-//                    else if (option == '5'){
-//                        boolean haveOrder = false;
-//                        for (Table table: Table.getTables()){
-//                            if (!table.getStatus().equals("NO")){
-//                                haveOrder = true;
-//                                break;
-//                            } //If any table has order, then table configuration is not allowed
-//                        }
-//                        if (!haveOrder)
-//                            Table.aturTable();
-//                        else
-//                            System.out.println("Table Configurations not allowed while table contains order!");
-//                    }
-//                    else if (option == '6')
-//                        manager.createNewManager();
-//                    else if (option == '7'){
-//                        manager.deleteManager();
-//                    }
-//                    else if (option == '8')
-//                        manager.displayManager();
-//                    //Enter respective functions corresponding to manager option
-//                }
-//            }
-//        }
-//
-////        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    public static void enterFunctions(int option, int tableNum){
-//        Order order = Table.getTables().get(tableNum-1).getOrder();
-//
-//        if (option == 1)
-//            order.addMeal(tableNum);
-//        else if (option == 2)
-//            order.removeMeal(tableNum);
-//        else if (option == 3){
-//            order.displayOrder(tableNum);
-//            System.out.print("\nPress 'Enter' to continue...");
-//            input.nextLine();
-//        }
-//        else if (option == 4)
-//            order.deleteOrder(tableNum);
-//        else if (option == 5)
-//            order.changeTable(tableNum);
-//        else if (option == 6)
-//            order.setOrderServed(tableNum);
-//        else if (option == 7){
-//            order.printReceipt(tableNum);
-//            System.out.print("\nPress 'Enter' to continue...");
-//            input.nextLine();
-//        }
-//        //Enter respective functions according to option
-//    }
-//    
-//    public static int menuEntry(ArrayList<Integer> options) {
-// String[] orderFunctions = {"Add Meal", "Remove Meal", "Display Order", "Delete Order", "Change Table", "Serve Meal", "Print Receipt"};
-//        int functionsNo = 1;
-//        for (int i=0; i<orderFunctions.length; i++){
-//            if (options.contains(i)){
-//                System.out.println(functionsNo + ". " + orderFunctions[i]);
-//                functionsNo++;
-//            }
-//        } //To display allowed functions according to table status
-//        System.out.println("------------------");
-//
-//        int option = 0;
-//        while (!(option >= 1 && option <= options.size())){
-//            System.out.print("Enter menu function: ");
-//            String optionS = input.nextLine();
-//            try{
-//                option = Integer.valueOf(optionS);
-//            }
-//            catch(NumberFormatException ex){
-//                System.out.println("Invalid input detected!");
-//            }
-//            if (!(option >= 1 && option <= options.size()))
-//                System.out.println("Invalid option! Try again.");
-//        } //Validate option received and verify that allowed function is chosen
-//
-//        option = options.get(option-1) + 1; //Make sure option is mapped to right option in options list
-//        return option;
-////        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    public static void displayManagerMenu() {
-//            System.out.println();
-//        System.out.println("1. Edit Meal Menu");
-//        System.out.println("2. Add Meal Menu");
-//        System.out.println("3. Delete Meal Menu");
-//        System.out.println("4. Set Promotion");
-//        System.out.println("5. Configure Table Settings");
-//        System.out.println("6. Create New Manager Account");
-//        System.out.println("7. Delete Existing Manager Account");
-//        System.out.println("8. Display Manager Account(s)");
-//        System.out.println("----------------------------------");
-////        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-    
     private static Scanner input;
 
     public static void main(String[] args){
         input = new Scanner(System.in);
-        System.out.println("*-*-*-*-*-*Welcome to TOMS*-*-*-*-*-*\n");
+        System.out.println("---------Welcome to Ashyap---------\n");
 
         System.out.print("Enter Restaurant/Cafe Name: ");
         String shopName = input.nextLine();
         Manager.setShopName(shopName);
 
         Manager manager = new Manager();
-        manager.createNewManager(); //Create new manager account at start, each time TOMS is executed
+        manager.createNewManager(); 
 
-        Table.configTable(); //Configure tables at start, each time TOMS is executed
+        Table.configTable(); 
 
         String username = "", password = "";
         while (true){
@@ -455,19 +47,19 @@ public class Restaurant {
 
                 if (!isValid)
                     System.out.println("Username or Password is incorrect! Try again.\n");
-            } //Validate and verify manager
+            } 
             if (username.equals("0")){
-                exitTOMS();
+                exitMenu();
                 continue;
             }
-            enterMenu(); //Enter menu after validation of manager
+            enterMenu(); 
         }
     }
 
     public static void enterMenu(){
         char access = ' ';
         while(access!='4'){
-            printSystemAccess(); //Print users of the system and menu exit option
+            printSystemAccess(); 
 
             while (!(access>='1' && access<='4')){
                 System.out.print("Choose System Access: ");
@@ -476,12 +68,12 @@ public class Restaurant {
                     access = systemAccess.charAt(0);
                 if (!(access>='1' && access<='4'))
                     System.out.println("Invalid System Access! Try again.");
-            } //Validate user option
+            } 
 
-            enterFunctions(access); //Enter chosen system access
+            enterFunctions(access); 
 
             if (access!='4')
-                access = ' '; //Resetting access value to repeat menu option
+                access = ' '; 
         }
         System.out.println(Manager.getShopName() + " Successfully Logged Out.");
     }
@@ -492,7 +84,7 @@ public class Restaurant {
         System.out.println("2.Cook");
         System.out.println("3.Manager");
         System.out.println("4.Log Out");
-        System.out.println("---------------------"); //Printing system access options
+        System.out.println("---------------------"); 
     }
 
     public static void enterFunctions(char access){
@@ -502,7 +94,6 @@ public class Restaurant {
 
             while (tableNum != 0){
                 System.out.println();
-//                Table.displayTable(Table.getTables()); //Displaying current tables' statuses
                 ArrayList<Integer> options = new ArrayList<>();
                 while(!(tableNum >= 0 && tableNum <= Table.getTotalTables())){
                     System.out.print("Enter table number(0 to exit): ");
@@ -515,12 +106,12 @@ public class Restaurant {
                     }
                     if (!(tableNum >= 0 && tableNum <= Table.getTotalTables()))
                         System.out.println("Invalid input for table number!");
-                } //Validate table number input
+                }
 
-                if (tableNum == 0) //If tableNum is 0, exit to system access menu
+                if (tableNum == 0)
                     break;
 
-                String status = Table.getTables().get(tableNum-1).getStatus(); //Getting table status
+                String status = Table.getTables().get(tableNum-1).getStatus(); 
 
                 if (status == "NO"){
                     int noOfPax = 0;
@@ -537,57 +128,53 @@ public class Restaurant {
                         }
                         if (noOfPax < 1)
                             System.out.println("Invalid input for number of customers!");
-                    } //Validate number of customers input
+                    } 
 
-                    Order order = new Order(noOfPax); //Create new order
-                    order.addMeal(tableNum); //Add meals to order
+                    Order order = new Order(noOfPax); 
+                    order.addMeal(tableNum); 
                 }
                 else if (status == "OT"){
-                    //If table status is "OT", then five options are given
                     options.clear();
                     for (int i=0; i<5; i++)
                         options.add(i);
                     System.out.println();
-                    int option = menuEntry(options); //Display menu options and receive menu option
-                    enterFunctions(option, tableNum); //Perform the specified menu option
+                    int option = menuEntry(options); 
+                    enterFunctions(option, tableNum); 
                 }
                 else if (status == "FR"){
-                    //If table status is "FR", then three options are given
                     options.clear();
                     options.add(0);
                     options.add(2);
                     options.add(4);
                     options.add(5);
                     System.out.println();
-                    int option = menuEntry(options); //Display menu options and receive menu option
-                    enterFunctions(option, tableNum); //Perform the specified menu option
+                    int option = menuEntry(options); 
+                    enterFunctions(option, tableNum); 
                 }
                 else if (status == "FS"){
-                    //If table status is "FS", then four options are given
                     options.clear();
                     options.add(0);
                     options.add(2);
                     options.add(4);
                     options.add(6);
                     System.out.println();
-                    int option = menuEntry(options); //Display menu options and receive menu option
-                    enterFunctions(option, tableNum); //Perform the specified menu option
+                    int option = menuEntry(options); 
+                    enterFunctions(option, tableNum); 
                 }
 
-                tableNum = -1; //To make loop continuity correctly
-            } //To repeat display tables' statuses, table number receiving and operations
+                tableNum = -1; 
+            } 
         }
 
         else if(access=='2'){
             int tableNum = -1;
             boolean isExist;
             Table chosenTable = null;
-            //Creating array list of tables for containing tables with order
             ArrayList<Table> tables = new ArrayList<>();
 
             while(tableNum != 0){
                 tableNum = -1;
-                Order.displayTableOrders(tables); //Display all table orders
+                Order.displayTableOrders(tables); 
 
                 if (tables.isEmpty()){
                     System.out.println("No orders at the moment.");
@@ -608,18 +195,17 @@ public class Restaurant {
                     for (Table table: tables){
                         if (table.getTableNum() == tableNum){
                             isExist = true;
-                            chosenTable = table; //Assigning chosenTable with the table that matches tableNum
+                            chosenTable = table; 
                             break;
                         }
                     }
                     if (!(tableNum >= 0 && isExist))
                         System.out.println("Table number entered does not exist in order list!");
-                } //Validate table number input
-
+                } 
+                
                 if (tableNum == 0)
-                    continue; //Return to system access menu
-
-                //Getting total number of meals present in the table order
+                    continue; 
+                
                 int numOfOrders = chosenTable.getOrder().getMeals().size();
                 int orderNo = 0;
                 while(!(orderNo >= 1 && orderNo <= numOfOrders)){
@@ -633,18 +219,15 @@ public class Restaurant {
                     }
                     if (!(orderNo >= 1 && orderNo <= numOfOrders))
                         System.out.println("Order number entered is invalid! Try again.");
-                } //Receiving order number of the orders in list of the chosen table number
-
-                //Creating Meal object to hold the chosen meal
+                }
+                
                 Meal chosenMeal = chosenTable.getOrder().getMeals().get(orderNo-1);
-                //Getting whether the meal chosen in order list is already cooked
                 boolean isMealCooking = chosenMeal.getMealStatus().equals("Cooking");
-                //Set the chosen meal as ready
                 if (isMealCooking)
                     chosenMeal.setMealStatus("Ready");
                 else
                     System.out.println("The meal chosen is already cooked!");
-                Order.setOrderReady(chosenTable); //If all meal is ready, set the order as ready
+                Order.setOrderReady(chosenTable); 
             }
         }
 
@@ -670,14 +253,14 @@ public class Restaurant {
 
                     if (!isValid)
                         System.out.println("Username or Password is incorrect! Try again.\n");
-                } //Validate and verify manager
+                } 
 
                 if (username.equals("0"))
-                    continue; //Exit manager system access immediately and return to choose system access
+                    continue; 
 
                 char option = ' ';
                 while (option != '0'){
-                    displayManagerMenu(); //Display manager functions menu
+                    displayManagerMenu(); 
                     option = ' ';
                     while (!(option >= '0' && option <= '8')){
                         System.out.print("Enter menu option(0 to exit): ");
@@ -686,55 +269,30 @@ public class Restaurant {
                             option = optionS.charAt(0);
                         if (!(option >= '0' && option <= '8'))
                             System.out.println("Invalid option! Try again.");
-                    } //Validate manager option
+                    } 
 
                     if (option == '0')
-                        continue; //If option is 0, then return to manager login
+                        continue; 
                     else if (option == '1')
                         manager.editMenu();
                     else if (option == '2')
                         manager.addMenu();
                     else if (option == '3')
                         manager.deleteMenu();
-                    else if (option == '4'){
-                        manager.setPromotion();
-                    }
-                    else if (option == '5'){
-                        boolean haveOrder = false;
-                        for (Table table: Table.getTables()){
-                            if (!table.getStatus().equals("NO")){
-                                haveOrder = true;
-                                break;
-                            } //If any table has order, then table configuration is not allowed
-                        }
-                        if (!haveOrder)
-                            Table.configTable();
-                        else
-                            System.out.println("Table Configurations not allowed while table contains order!");
-                    }
-                    else if (option == '6')
-                        manager.createNewManager();
-                    else if (option == '7'){
-                        manager.deleteManager();
-                    }
-                    else if (option == '8')
-                        manager.displayManager();
-                    //Enter respective functions corresponding to manager option
                 }
             }
         }
     }
 
     public static int menuEntry(ArrayList<Integer> options){
-        //All possible order functions listed in array of String
-        String[] orderFunctions = {"Add Meal", "Remove Meal", "Display Order", "Delete Order", "Change Table", "Serve Meal", "Print Receipt"};
+        String[] orderFunctions = {"Display Order", "Delete Order", "Change Table", "Serve Meal", "Print Receipt"};
         int functionsNo = 1;
         for (int i=0; i<orderFunctions.length; i++){
             if (options.contains(i)){
                 System.out.println(functionsNo + ". " + orderFunctions[i]);
                 functionsNo++;
             }
-        } //To display allowed functions according to table status
+        } 
         System.out.println("------------------");
 
         int option = 0;
@@ -749,36 +307,31 @@ public class Restaurant {
             }
             if (!(option >= 1 && option <= options.size()))
                 System.out.println("Invalid option! Try again.");
-        } //Validate option received and verify that allowed function is chosen
+        } 
 
-        option = options.get(option-1) + 1; //Make sure option is mapped to right option in options list
+        option = options.get(option-1) + 1; 
         return option;
     }
 
     public static void enterFunctions(int option, int tableNum){
         Order order = Table.getTables().get(tableNum-1).getOrder();
 
-        if (option == 1)
-            order.addMeal(tableNum);
-        else if (option == 2)
-            order.removeMeal(tableNum);
-        else if (option == 3){
+        if (option == 1){
             order.displayOrder(tableNum);
             System.out.print("\nPress 'Enter' to continue...");
             input.nextLine();
         }
-        else if (option == 4)
+        else if (option == 2)
             order.deleteOrder(tableNum);
-        else if (option == 5)
+        else if (option == 3)
             order.changeTable(tableNum);
-        else if (option == 6)
+        else if (option == 4)
             order.setOrderServed(tableNum);
-        else if (option == 7){
+        else if (option == 5){
             order.printReceipt(tableNum);
             System.out.print("\nPress 'Enter' to continue...");
             input.nextLine();
         }
-        //Enter respective functions according to option
     }
 
     public static void displayManagerMenu(){
@@ -786,15 +339,10 @@ public class Restaurant {
         System.out.println("1. Edit Meal Menu");
         System.out.println("2. Add Meal Menu");
         System.out.println("3. Delete Meal Menu");
-        System.out.println("4. Set Promotion");
-        System.out.println("5. Configure Table Settings");
-        System.out.println("6. Create New Manager Account");
-        System.out.println("7. Delete Existing Manager Account");
-        System.out.println("8. Display Manager Account(s)");
-        System.out.println("----------------------------------"); //Printing manager functions
+        System.out.println("----------------------------------"); 
     }
 
-    public static void exitTOMS(){
+    public static void exitMenu(){
         char option = ' ';
         System.out.println("Are you sure, you want to exit? All saved data will be lost!");
         while (!(option == 'N')){
@@ -803,9 +351,9 @@ public class Restaurant {
             if (optionS.length() >= 1)
                 option = Character.toUpperCase(optionS.charAt(0));
             if (option == 'Y'){
-                System.out.println(Manager.getShopName() + "'s TOMS Successfully Terminated.");
+                System.out.println(Manager.getShopName() + "'s Ashyaap Successfully Terminated.");
                 System.exit(0);
-            } //Exit TOMS system with confirmation from user, where data will be lost after exiting
+            } 
             if (!(option == 'N'))
                 System.out.println("Invalid input detected! Try again.");
         }
