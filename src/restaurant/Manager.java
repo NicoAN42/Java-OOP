@@ -241,34 +241,34 @@ public static double getMinimumAmount() {
         Meal.getMealPrices().remove(mealIndex);
         System.out.println("The given meal sucessfully removed!");
     }
-
-    public void setPromotion() {
-
-        double minimumAmount = -1;
-        double setDrinkPrice = -1;
-
-        while (!(minimumAmount >= 0 && setDrinkPrice >= 0)) {
-
-            System.out.print("Enter new minimum amount: RM");
-            String minimumAmountS = input.nextLine();
-            System.out.print("Enter new set drink price: RM");
-            String setDrinkPriceS = input.nextLine();
-            try {
-
-                minimumAmount = Double.valueOf(minimumAmountS);
-                setDrinkPrice = Double.valueOf(setDrinkPriceS);
-
-            } catch (NumberFormatException ex) {
-                System.out.println("Invalid input detected!");
-            }
-            if (!(minimumAmount >= 0 && setDrinkPrice >= 0)) {
-                System.out.println("Invalid input for discount rate/minimum amount/set drink price!");
-            }
-        } 
-        Manager.setMinimumAmount(minimumAmount);
-        Meal.setSetDrinkPrice(setDrinkPrice);
-        System.out.println("Discount rate, minimum amount and set drink price successfully changed.");
-    }
+//
+//    public void setPromotion() {
+//
+//        double minimumAmount = -1;
+//        double setDrinkPrice = -1;
+//
+//        while (!(minimumAmount >= 0 && setDrinkPrice >= 0)) {
+//
+//            System.out.print("Enter new minimum amount: RM");
+//            String minimumAmountS = input.nextLine();
+//            System.out.print("Enter new set drink price: RM");
+//            String setDrinkPriceS = input.nextLine();
+//            try {
+//
+//                minimumAmount = Double.valueOf(minimumAmountS);
+//                setDrinkPrice = Double.valueOf(setDrinkPriceS);
+//
+//            } catch (NumberFormatException ex) {
+//                System.out.println("Invalid input detected!");
+//            }
+//            if (!(minimumAmount >= 0 && setDrinkPrice >= 0)) {
+//                System.out.println("Invalid input for discount rate/minimum amount/set drink price!");
+//            }
+//        } 
+//        Manager.setMinimumAmount(minimumAmount);
+//        Meal.setSetDrinkPrice(setDrinkPrice);
+//        System.out.println("Discount rate, minimum amount and set drink price successfully changed.");
+//    }
 
     public String mealCodeInput() {
         boolean isExist = false;
