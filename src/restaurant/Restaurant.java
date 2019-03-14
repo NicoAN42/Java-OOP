@@ -26,7 +26,7 @@ public class Restaurant {
         Manager manager = new Manager();
         manager.createNewManager(); 
 
-        Table.configTable(); 
+        Table.configTable();
 
         String username = "", password = "";
         while (true){
