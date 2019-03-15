@@ -19,7 +19,7 @@ public class Main {
    
     Vector<Food> vFood = new Vector();
     Scanner scan = new Scanner(System.in);
-
+    
     String name;
     Integer price;
     Integer stock;
@@ -45,8 +45,11 @@ public class Main {
         System.out.println("4. Delete Food");
         System.out.println("5. Exit");
     }
+    
+    
 
     void view() {
+//        vFood.
         if (vFood.size() <= 0) {
             System.out.println("No Food Data Yet.");
         } else {
@@ -82,6 +85,7 @@ public class Main {
 
     void update() {
         int index;
+//        vFood.
         Food food = new Food();
         if (vFood.size() <= 0) {
             System.out.println("No Food Data Yet.");

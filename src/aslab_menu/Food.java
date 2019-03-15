@@ -19,13 +19,13 @@ public class Food {
     private Integer spicyLevel;
     private Float rating;
     private Boolean isTakeAway;
-    
-    public Food(){
-    //default
+
+    @Override
+    public String toString() {
+        return "Food{" + "name=" + name + ", price=" + price + ", stock=" + stock + ", calorie=" + calorie + ", desc=" + desc + ", spicyLevel=" + spicyLevel + ", rating=" + rating + ", isTakeAway=" + isTakeAway + '}';
     }
 
     public Food(String name, Integer price, Integer stock, Float calorie, String desc, Integer spicyLevel, Float rating, Boolean isTakeAway) {
-        super();
         this.name = name;
         this.price = price;
         this.stock = stock;
@@ -35,7 +35,7 @@ public class Food {
         this.rating = rating;
         this.isTakeAway = isTakeAway;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -99,11 +99,9 @@ public class Food {
     public void setIsTakeAway(Boolean isTakeAway) {
         this.isTakeAway = isTakeAway;
     }
-
-    @Override
-    public String toString() {
-        return "Restaurant{" + "name=" + name + ", price=" + price + ", stock=" + stock + ", calorie=" + calorie + ", desc=" + desc + ", spicyLevel=" + spicyLevel + ", rating=" + rating + ", isTakeAway=" + isTakeAway + '}';
+    
+    public Food(){
+    //default
     }
-    
-    
+
 }
