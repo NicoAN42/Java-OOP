@@ -15,7 +15,7 @@ public class Account {
 
     
     static void clr() {
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < 4; i++) {
             System.out.println();
         }
     }
@@ -28,6 +28,8 @@ public class Account {
         String user;
         String pwd;
         Scanner input = new Scanner(System.in);
+        Guru gr = new Guru();
+        ViewSiswa vs = new ViewSiswa();
         
         do{
             clr();
@@ -44,15 +46,15 @@ public class Account {
             System.out.println("=======================");
             System.out.println("= Account Guru  =");
             System.out.println("=======================");
-            new Guru();
+            gr.viewGuru();
 //            new Account();
         } else if (user.equals("Siswa") && pwd.equals("siswa")) {
             clr();
             System.out.println("=======================");
             System.out.println("= Account Siswa =");
             System.out.println("=======================");
-            new ViewSiswa();
-            return;
+            vs.ViewData();
+//            return;
         } else {
             System.out.println("=======================");
             System.out.println("= Login Gagal =");

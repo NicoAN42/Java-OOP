@@ -24,19 +24,13 @@ public class ViewSiswa {
     Integer nUjian;
     Integer nAkhir;
 
-    public ViewSiswa() {
-//        System.out.println("Search Data [Name]: ");
-//        input.nextLine();
-        
-    
-        try {
-        do{
-            System.out.println("Search Data [Name]: ");
-            nama = input.nextLine();
-            
+    public void ViewData(){
+         if (vSiswa.size() <= 0) {
+            System.out.println("No Data Yet.");
+        } else {
             for (int i = 0; i < vSiswa.size(); i++) {
-                if (vSiswa.get(i).getNama().contains(nama)) {
-                    
+//                if (vSiswa.get(i).getNama().contains(nama)) {
+//                    
                 System.out.println("No.               " + (i + 1));
                 System.out.println("Nama              " + vSiswa.get(i).getNama());
                 System.out.println("Mata Kuliah       " + vSiswa.get(i).getMatkul());
@@ -44,19 +38,54 @@ public class ViewSiswa {
                 System.out.println("Nilai Ujian       " + vSiswa.get(i).getnUjian());
                 System.out.println("Nilai Akhir       " + vSiswa.get(i).getnAkhir());
             }
-                else{
-                System.out.println("Data not found!");
-            }
-            }
+//                else{
+//                System.out.println("Data not found!");
+//            }
+//            }
 
-        }while(nama.length() < 3 || nama.length() > 15);
-            
-        } catch (Exception e) {
-            new ViewSiswa();
+//        }while(nama.length() < 3 || nama.length() > 15);
+//            
+//        } catch (Exception e) {
+//           System.out.println("Data Null");
+//        }
         }
-        
-    }
+        }
 
    
 
-}
+    public ViewSiswa() {
+//        System.out.println("Search Data [Name]: ");
+//        input.nextLine();
+
+//        try {
+//        do{
+//            System.out.println("Search Data [Name]: ");
+//            nama = input.nextLine();
+//            
+//        if (vSiswa.size() <= 0) {
+//            System.out.println("No Data Yet.");
+//        } else {
+//            for (int i = 0; i < vSiswa.size(); i++) {
+////                if (vSiswa.get(i).getNama().contains(nama)) {
+////                    
+//                System.out.println("No.               " + (i + 1));
+//                System.out.println("Nama              " + vSiswa.get(i).getNama());
+//                System.out.println("Mata Kuliah       " + vSiswa.get(i).getMatkul());
+//                System.out.println("Nilai Tugas       " + vSiswa.get(i).getnTugas());
+//                System.out.println("Nilai Ujian       " + vSiswa.get(i).getnUjian());
+//                System.out.println("Nilai Akhir       " + vSiswa.get(i).getnAkhir());
+//            }
+////                else{
+////                System.out.println("Data not found!");
+////            }
+////            }
+//
+////        }while(nama.length() < 3 || nama.length() > 15);
+////            
+////        } catch (Exception e) {
+////           System.out.println("Data Null");
+////        }
+//        }
+//        }
+    }
+    }

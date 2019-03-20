@@ -12,7 +12,7 @@ import java.util.Vector;
  *
  * @author Acer
  */
-public class Guru {
+public class Guru extends Account{
 
     Scanner input = new Scanner(System.in);
     Vector<Siswa> vSiswa = new Vector();
@@ -23,7 +23,7 @@ public class Guru {
     Integer nUjian;
     Integer nAkhir;
 
-    public Guru() {
+    public void viewGuru(){
         Siswa siswa = new Siswa();
 //        new ViewSiswa();
         do {
@@ -67,6 +67,9 @@ public class Guru {
         System.out.println("Success Add Nilai");
         input.nextLine();
         vSiswa.add(siswa);
+        
+    }
+    public Guru() {
         
     }
 }

@@ -13,13 +13,11 @@ import java.util.Vector;
  */
 public class Siswa extends Account{
 
-    Vector<Siswa> vSiswa = new Vector();
-
-    protected String nama;
-    protected String matkul;
-    protected Integer nTugas;
-    protected Integer nUjian;
-    protected Integer nAkhir;
+    private String nama;
+    private String matkul;
+    private Integer nTugas;
+    private Integer nUjian;
+    private Integer nAkhir;
 
     
     public Siswa(){
