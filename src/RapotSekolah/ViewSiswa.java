@@ -16,7 +16,7 @@ import java.util.Vector;
 public class ViewSiswa {
 
     Scanner input = new Scanner(System.in);
-    Vector<Siswa> vSiswa = new Vector();
+    public static Vector<Siswa> vSiswa = new Vector();
 
     String nama;
     String matkul;
@@ -25,6 +25,9 @@ public class ViewSiswa {
     Integer nAkhir;
 
     public void ViewData(){
+//        Siswa siswa = new Siswa();
+//        siswa.toString();
+        
          if (vSiswa.size() <= 0) {
             System.out.println("No Data Yet.");
         } else {

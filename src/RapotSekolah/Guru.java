@@ -15,8 +15,9 @@ import java.util.Vector;
 public class Guru extends Account{
 
     Scanner input = new Scanner(System.in);
-    Vector<Siswa> vSiswa = new Vector();
+    public static Vector<Siswa> vSiswa = new Vector();
 
+//    Vector<Siswa> vSiswa;
     String nama;
     String matkul;
     Integer nTugas;
@@ -36,11 +37,11 @@ public class Guru extends Account{
             System.out.println("Input Mata Kuliah[Java | C | Sql]: ");
             matkul = input.nextLine();
         } while (!matkul.equalsIgnoreCase("Java") && !matkul.equalsIgnoreCase("C") && !matkul.equalsIgnoreCase("Sql"));
-        if (matkul == "Java") {
+        if (matkul.equalsIgnoreCase("Java")) {
             siswa.setMatkul("Java");
-        } else if (matkul == "C") {
+        } else if (matkul.equalsIgnoreCase("C")) {
             siswa.setMatkul("C");
-        } else if (matkul == "Sql") {
+        } else if (matkul.equalsIgnoreCase("Sql")) {
             siswa.setMatkul("Sql");
         }
 
@@ -66,7 +67,10 @@ public class Guru extends Account{
 
         System.out.println("Success Add Nilai");
         input.nextLine();
-        vSiswa.add(siswa);
+        
+        
+          
+        ViewSiswa.vSiswa.add(siswa);
         
     }
     public Guru() {
